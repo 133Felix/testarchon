@@ -2,5 +2,12 @@ node_modules/
 .server-port
 bun.lockb
 *.log
-.archon/
-.claude/skills/
+
+# Archon — track workflows + mcp configs, ignore runtime artifacts
+.archon/logs/
+.archon/artifacts/
+.archon/state/
+.archon/_runs/
+
+# Claude — track our custom skills, ignore plugin/marketplace skills
+.claude/skills/archon/

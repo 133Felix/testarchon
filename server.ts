@@ -19,6 +19,12 @@ app.post("/api/click", (c) => {
   return c.json({ count });
 });
 
+app.post("/api/reset", (c) => {
+  count = 0;
+  log("info", "reset", { count });
+  return c.json({ count });
+});
+
 const port = Number(process.env.PORT ?? 0);
 const server = Bun.serve({ port, fetch: app.fetch });
 log("info", "listening", { port: server.port });

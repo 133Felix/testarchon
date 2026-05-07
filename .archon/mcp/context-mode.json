@@ -1,0 +1,9 @@
+{
+  "context-mode": {
+    "command": "npx",
+    "args": ["-y", "@mksglu/context-mode"],
+    "env": {
+      "CTX_DB_PATH": "${ARCHON_HOME}/context-mode.db"
+    }
+  }
+}

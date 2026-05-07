@@ -14,8 +14,10 @@
   <p>Minimal workflow target. Click button, count increments.</p>
   <div id="count">0</div>
   <button id="btn" type="button">Click me</button>
+  <button id="reset" type="button">Reset</button>
   <script>
     const btn = document.getElementById("btn");
+    const resetBtn = document.getElementById("reset");
     const display = document.getElementById("count");
     async function load() {
       const r = await fetch("/api/count");
@@ -24,6 +26,11 @@
     }
     btn.addEventListener("click", async () => {
       const r = await fetch("/api/click", { method: "POST" });
+      const { count } = await r.json();
+      display.textContent = String(count);
+    });
+    resetBtn.addEventListener("click", async () => {
+      const r = await fetch("/api/reste", { method: "POST" });
       const { count } = await r.json();
       display.textContent = String(count);
     });
